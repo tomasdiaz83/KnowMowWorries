@@ -34,12 +34,12 @@ Listing.init(
                 len: [5,5],
             },
         },
-        datecreated: {
+        dateCreated: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
-        user_id: {
+        userID: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',

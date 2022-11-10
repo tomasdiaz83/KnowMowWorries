@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Sal",
+        "email": "sal@hotmail.com",
+        "phone": "5623598456",
+        "password": "password12345"
+    },
+    {
+        "name": "Lernantino",
+        "email": "lernantino@gmail.com",
+        "phone": "4562563145",
+        "password": "password12345"
+    },
+    {
+        "name": "Amiko",
+        "email": "amiko2k20@aol.com",
+        "phone": "7859632458",
+        "password": "password12345"
+    },
+    {
+        "name": "Jordan",
+        "email": "jordan99@msn.com",
+        "phone": "1452369862",
+        "password": "password12345"
+    },
+    {
+        "name": "Blake",
+        "email": "the_blake@yahoo.com",
+        "phone": "4562153125",
+        "password": "password12345"
+    }
+]

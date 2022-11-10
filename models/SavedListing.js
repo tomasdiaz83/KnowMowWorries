@@ -18,6 +18,14 @@ SavedListing.init(
                 model: 'listing',
                 key: 'id',
             },
+        },
+        userID: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            reference: {
+                model: 'user',
+                key: 'id'
+            }
         }
     },
     {

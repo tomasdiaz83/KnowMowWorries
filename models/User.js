@@ -29,11 +29,11 @@ User.init(
             },
         },
         phone: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: true,
             unique: true,
             validate: {
-                len: [7,7]
+                len: [10,10]
             },
         },
         password: {

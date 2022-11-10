@@ -1,3 +1,8 @@
+* {
+  background-color: rgb(16, 252, 16);
+  padding: 70px;
+}
+
 ul {
     list-style-type: none;
     margin: 0;

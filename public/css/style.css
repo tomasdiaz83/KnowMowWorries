@@ -1,14 +1,13 @@
 * {
-  background-color: rgb(16, 252, 16);
+  background-color: rgb(192, 246, 192);
   padding: 70px;
 }
 
-ul {
+ ul {
     list-style-type: none;
-    margin: 0;
+    margin: 20px;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
   }
   
   li {
@@ -17,7 +16,7 @@ ul {
   
   li a {
     display: block;
-    color: white;
+    color: rgb(7, 7, 7);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -25,5 +24,10 @@ ul {
   
   /* Change the link color to #111 (black) on hover */
   li a:hover {
-    background-color: #111;
+   color: rgb(123, 123, 123);
+  } 
+
+  .border {
+    border-bottom-style: solid;
+    border-color: rgb(152, 188, 170);
   }

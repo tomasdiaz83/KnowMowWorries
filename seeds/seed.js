@@ -1,8 +1,5 @@
 const sequelize = require('../config/connection');
-const Listing = require('../models/Listing')
-const Review = require('../models/Review')
-const SavedListing = require('../models/SavedListing')
-const User = require('../models/User')
+const { User, Listing, Review, SavedListing } = require('../models')
 
 const userData = require('./user-seeds.json');
 const listingData = require('./listing-seeds.json');
@@ -23,7 +20,7 @@ const seedDatabase = async () => {
         
         const listingInfo = await Listing.create({
             ...listing,
-            userID: users[Math.floor(Math.random() * users.length)].id
+            user_id: users[Math.floor(Math.random() * users.length)].id
         })
 
         listingArray.push(listingInfo);
@@ -32,8 +29,8 @@ const seedDatabase = async () => {
     for (const review of reviewData) {
         const reviewInfo = await Review.create({
             ...review,
-            userID: users[Math.floor(Math.random() * users.length)].id,
-            listingID: listingArray[Math.floor(Math.random() * listingArray.length)].id
+            user_id: users[Math.floor(Math.random() * users.length)].id,
+            listing_id: listingArray[Math.floor(Math.random() * listingArray.length)].id
         })
 
         reviewArray.push(reviewInfo)
@@ -41,8 +38,8 @@ const seedDatabase = async () => {
 
     for (let i = 0; i < 5; i++) {
         await SavedListing.create({
-            userID: users[Math.floor(Math.random() * users.length)].id,
-            listingRef: listingArray[Math.floor(Math.random() * listingArray.length)].id
+            user_id: users[Math.floor(Math.random() * users.length)].id,
+            listing_id: listingArray[Math.floor(Math.random() * listingArray.length)].id
         })
     }
 

@@ -3,46 +3,50 @@ const SavedListing = require("./SavedListing")
 const Review = require("./Review")
 const Listing = require("./Listing")
 
-User.hasMany(SavedListing, {
-    foreignKey: "userID",
-    onDelete: "CASCADE"
-})
-User.hasMany(Review, {
-    foreignKey: "userID",
-    onDelete: "CASCADE"
-})
 User.hasMany(Listing, {
-    foreignKey: "userID",
+    foreignKey: "user_id",
     onDelete: "CASCADE"
 })
 
 Listing.belongsTo(User, {
-    foreignKey: "userID",
+    foreignKey: "user_id",
 })
 
-Listing.hasMany(Review, {
-    foreignKey: "listingID",
+User.hasMany(SavedListing, {
+    foreignKey: "userID",
     onDelete: "CASCADE"
 })
 
-Listing.hasMany(SavedListing, {
-    foreignKey: "listingRef",
+SavedListing.belongsTo(User, {
+    foreignKey: "user_id",
+    onDelete: "CASCADE"
+})
+
+User.hasMany(Review, {
+    foreignKey: "userID",
     onDelete: "CASCADE"
 })
 
 Review.belongsTo(User, {
-    foreignKey: "userID",
+    foreignKey: "user_id",
+})
+
+Listing.hasMany(Review, {
+    foreignKey: "listing_id",
+    onDelete: "CASCADE"
 })
 
 Review.belongsTo(Listing, {
-    foreignKey: "listingID",
+    foreignKey: "listing_id",
 })
 
-SavedListing.hasMany(User, {
-    foreignKey: "listingRef",
+Listing.hasMany(SavedListing, {
+    foreignKey: "listing_id",
     onDelete: "CASCADE"
 })
 
 SavedListing.belongsTo(Listing, {
-    foreignKey: "listingRef",
+    foreignKey: "listing_id",
 })
+
+module.exports = { User, Listing, Review, SavedListing}

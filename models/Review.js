@@ -15,7 +15,7 @@ Review.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        userID: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
@@ -23,7 +23,7 @@ Review.init(
                 key: 'id',
             }
         },
-        listingID: {
+        listing_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {

@@ -11,7 +11,7 @@ SavedListing.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        listingRef: {
+        listing_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
@@ -19,7 +19,7 @@ SavedListing.init(
                 key: 'id',
             },
         },
-        userID: {
+        user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             reference: {

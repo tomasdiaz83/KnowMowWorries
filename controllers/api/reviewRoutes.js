@@ -3,19 +3,24 @@ const { User, Listing, SavedListing, Review } = require('../../models');
 
 router.get('/', async (req, res) => {
     try {
-        const listingData = await Listing.findAll({
+        const reviewData = await Review.findAll({
             include: [
                 {
                     model: User,
                     attributes: ['name']
-                }
+                },
+                {
+                    model: Listing,
+                    attributes: ['id']
+                },
             ]
-        })
+        });
 
-        res.status(200).json(listingData);
+        res.status(200).json(reviewData);
     } catch (err) {
+        console.log(err);
         res.status(500).json(err)
     }
 })
 
-module.exports = router
+module.exports = router;

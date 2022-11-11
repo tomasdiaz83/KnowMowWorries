@@ -35,7 +35,7 @@ Listing.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
-        userID: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',

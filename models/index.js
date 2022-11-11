@@ -46,3 +46,5 @@ SavedListing.hasMany(User, {
 SavedListing.belongsTo(Listing, {
     foreignKey: "listingRef",
 })
+
+module.exports = { User, Listing, Review, SavedListing}

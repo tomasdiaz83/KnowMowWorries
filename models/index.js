@@ -13,7 +13,7 @@ Listing.belongsTo(User, {
 })
 
 User.hasMany(SavedListing, {
-    foreignKey: "userID",
+    foreignKey: "user_id",
     onDelete: "CASCADE"
 })
 
@@ -23,7 +23,7 @@ SavedListing.belongsTo(User, {
 })
 
 User.hasMany(Review, {
-    foreignKey: "userID",
+    foreignKey: "user_id",
     onDelete: "CASCADE"
 })
 

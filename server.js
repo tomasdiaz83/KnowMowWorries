@@ -1,8 +1,8 @@
 //TEMP Model Imports
-const Listing = require('./models/Listing')
-const Review = require('./models/Review')
-const SavedListing = require('./models/SavedListing')
-const User = require('./models/User')
+// const Listing = require('./models/Listing')
+// const Review = require('./models/Review')
+// const SavedListing = require('./models/SavedListing')
+// const User = require('./models/User')
 
 //Importing dependencies
 const path = require('path');
@@ -14,12 +14,12 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 //Importing routes/helpers
 const routes = require('./controllers');
 const sequelize = require('./config/connection')
-//const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-//const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers });
 
 const sess = {
     secret: process.env.SESS_SEC,
@@ -33,7 +33,7 @@ const sess = {
 
 app.use(session(sess));
 
-//app.engine('handlebars', hbs.engine);
+app.engine('handlebars', hbs.engine);
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

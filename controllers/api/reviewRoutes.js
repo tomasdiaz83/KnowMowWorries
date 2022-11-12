@@ -7,18 +7,13 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name']
-                },
-                {
-                    model: Listing,
-                    attributes: ['id']
+                    attributes: ['name', 'id']
                 },
             ]
         });
 
         res.status(200).json(reviewData);
-    } catch (err) {
-        console.log(err);
+         } catch (err) {
         res.status(500).json(err)
     }
 })

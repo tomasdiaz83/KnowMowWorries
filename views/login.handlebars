@@ -1,25 +1,50 @@
+{{!-- Signup --}}
+
 <section>
     <div class="field">
         <label class="label">Name</label>
         <div class="control">
-          <input class="input" type="text" placeholder="e.g Alex Smith">
+          <input class="input" id="name-register" type="text" placeholder="e.g Alex Smith">
         </div>
       </div>
       
       <div class="field">
         <label class="label">Email</label>
         <div class="control">
-          <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+          <input class="input" id="email-register" type="email" placeholder="e.g. alexsmith@gmail.com">
         </div>
       </div>
 
       <div class="field">
         <label class="label">Password</label>
         <div class="control">
-          <input class="input" type="password" placeholder="e.g. alexsmith@gmail.com">
+          <input class="input" id="password-register" type="password" placeholder="e.g. alexsmith@gmail.com">
         </div>
       </div>
       <div class="control">
-        <button style="float:right" class="button is-link is-success">Submit</button>
+        <button style="float:right" class="button is-link is-success" id="register-button">Submit</button>
       </div>
 </section>
+
+{{!-- Login --}}
+
+<section>
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input" id="email-login" type="email" placeholder="e.g. alexsmith@gmail.com">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Password</label>
+        <div class="control">
+          <input class="input" id="password-login" type="password" placeholder="e.g. alexsmith@gmail.com">
+        </div>
+      </div>
+      <div class="control">
+        <button style="float:right" class="button is-link is-success" id="login-button" >Submit</button>
+      </div>
+</section>
+
+<script src="/js/login.js"></script>

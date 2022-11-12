@@ -34,9 +34,13 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/contact', async (req, res) => {
-    res.render('contact');
+router.get('/login', async (req, res) => {
+    res.render('login');
 });
+
+// router.get('/contact', async (req, res) => {
+//     res.render('contact');
+// });
 
 // router.get('/', async (req, res) => {
 //     res.render('dashboard');

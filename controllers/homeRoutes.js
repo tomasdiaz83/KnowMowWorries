@@ -45,8 +45,10 @@ router.get('/login', async (req, res) => {
 router.get('/dashboard', async (req, res) => {
     try {
         const listingData = await Listing.findAll({
+
             where: {
-                user_id: req.session.user_id
+                // user_id: 5
+                user_id: req.session.user_id,
             },  
             include: [
                 {
@@ -67,16 +69,17 @@ router.get('/dashboard', async (req, res) => {
         })
         const savedListingData = await SavedListing.findAll({
             where: {
-                user_id: req.session.user_id
+                user_id: req.session.user_id,
+                // user_id: 1
             },  
             include: [
-                {
-                    model: User,
-                    attributes: ['name', 'id']
-                },
+                // {
+                //     model: User,
+                //     attributes: ['name', 'id']
+                // },
                 {
                     model: Listing,
-                    attributes: ['user', 'category', 'pricing'],
+                    attributes: ['user_id', 'category', 'pricing'],
                     include: [
                         {
                             model: User, 
@@ -88,7 +91,8 @@ router.get('/dashboard', async (req, res) => {
             ]
         })
         
-
+console.log(listingData)
+console.log(savedListingData)
         const listings = listingData.map((listing) => listing.get({ plain: true }));
         const savedListing = savedListingData.map((savedListing) => savedListing.get({plain: true}));
         

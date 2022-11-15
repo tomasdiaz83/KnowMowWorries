@@ -58,9 +58,9 @@ router.get('/listing/:id', async (req, res) => {
     }
 });
 
-// router.get('/', async (req, res) => {
-//     res.render('search');
-// });   
+router.get('/search', async (req, res) => {
+    res.render('search');
+});
 
 router.get('/login', async (req, res) => {
     res.render('login');

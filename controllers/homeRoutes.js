@@ -26,7 +26,8 @@ router.get('/', async (req, res) => {
 
         //res.status(200).json(listingData);
         res.render('home', {
-            listings
+            listings,
+            logged_in: req.session.logged_in
         });
     } catch (err) {
         console.log(err);
@@ -59,14 +60,16 @@ router.get('/listing/:id', async (req, res) => {
 
         console.log(listing);
 
-        res.status(200).json(listing);
-        // res.render('listingInfo', {
-        //     listing
-        // });
+        // res.status(200).json(listing);
+        res.render('listingInfo', {
+            listing,
+            logged_in: req.session.logged_in
+        });
     } catch (err) {
         res.status(500).json(err)
     }
 });
+
 
 // router.get('/', async (req, res) => {
 //     res.render('search');

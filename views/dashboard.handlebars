@@ -5,9 +5,12 @@
         <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">My Posts</p>
         </div>
         <div class="tile is-parent box has-background-primary-light">
-            {{#each listings as |listing| }}  
-              <p>Category: {{listing.category}}</p>
-              <p>Description: {{listing.description}}</p>
+            {{#each listings as |listing| }}
+                <a href="/listing/{{listing.id}}">{{listing.title}}</a>
+                Category: {{listing.category}}
+                Description: {{listing.description}}
+                <br>
+                <br>
             {{/each}}
 
 

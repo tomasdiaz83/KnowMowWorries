@@ -8,17 +8,7 @@ router.get('/', async (req, res) => {
                 {
                     model: User,
                     attributes: ['name', 'id']
-                },
-                {
-                    model: Review,
-                    attributes: ['comment'],
-                    include: [
-                        {
-                            model: User, 
-                            attributes: ['name', 'id']
-                        }
-                    ]
-                },
+                }
             ]
         })
 
@@ -41,7 +31,7 @@ router.get('/listing/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name']
+                    attributes: ['name', 'email', 'phone']
                 },
                 {
                     model: Review,
@@ -57,8 +47,6 @@ router.get('/listing/:id', async (req, res) => {
         })
 
         const listing = listingData.get({ plain: true });
-
-        console.log(listing);
 
         // res.status(200).json(listing);
         res.render('listingInfo', {
@@ -87,7 +75,6 @@ router.get('/dashboard', async (req, res) => {
         const listingData = await Listing.findAll({
 
             where: {
-                // user_id: 5
                 user_id: req.session.user_id,
             },  
             include: [
@@ -95,28 +82,13 @@ router.get('/dashboard', async (req, res) => {
                     model: User,
                     attributes: ['name', 'id']
                 },
-                // {
-                //     model: Review,
-                //     attributes: ['comment'],
-                //     include: [
-                //         {
-                //             model: User, 
-                //             attributes: ['name', 'id']
-                //         }
-                //     ]
-                // },
             ]
         })
         const savedListingData = await SavedListing.findAll({
             where: {
                 user_id: req.session.user_id,
-                // user_id: 1
             },  
             include: [
-                // {
-                //     model: User,
-                //     attributes: ['name', 'id']
-                // },
                 {
                     model: Listing,
                     attributes: ['user_id', 'category', 'pricing'],
@@ -131,15 +103,11 @@ router.get('/dashboard', async (req, res) => {
             ]
         })
         
-console.log(listingData)
-console.log(savedListingData)
         const listings = listingData.map((listing) => listing.get({ plain: true }));
         const savedListing = savedListingData.map((savedListing) => savedListing.get({plain: true}));
         
-        //console.log(listings)
-        //res.status(200).json(listingData);
         res.render('dashboard', {
-            listings, savedListing
+            listings, savedListing, logged_in: req.session.logged_in
         });
     } catch (err) {
         console.log(err);
@@ -147,8 +115,10 @@ console.log(savedListingData)
     }
 });
 
- router.get('/', async (req, res) => {
-     res.render('postlogin');
+ router.get('/newListing', async (req, res) => {
+     res.render('newListing', {
+        logged_in: req.session.logged_in
+     });
  });
    
 

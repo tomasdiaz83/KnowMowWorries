@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Listing, SavedListing, Review } = require('../../models');
+const { restore } = require('../../models/User');
 
 router.get('/', async (req, res) => {
     try {
@@ -45,7 +46,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.get('/create', async (req, res) => {
+router.post('/create', async (req, res) => {
     try {
         const listingData = await Listing.create({
             ...req.body,

@@ -15,11 +15,28 @@
 
 <h1>Comments</h1>
 
-{{!-- {{#if logged_in}} --}}
+{{#if logged_in}}
 {{#each listing.reviews as |review|}}
 <div>
     <p>{{review.comment}}</p>
     <p>{{review.user.name}}</p>
 </div>
 {{/each}}
-{{!-- {{/if}} --}}
+
+<div class="box has-background-primary-light mt-6 pb-6">
+    <div class="box has-background-primary-light">
+        <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">Leave a Review</p>
+    </div>
+    <div class="tile is-parent box has-background-primary-light">
+        <div class="tile is-child box has-background-primary-light field control">          
+        <textarea class="textarea" placeholder="Textarea"></textarea>
+        </div>
+    </div>
+    
+    <input style="float:right" class="button is-success is-focused" type="submit" value="Submit">
+</div>
+{{#else}}
+<div>
+    <p>Login to view!</p>
+</div>
+{{/if}}

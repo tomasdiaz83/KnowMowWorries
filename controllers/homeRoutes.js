@@ -8,17 +8,7 @@ router.get('/', async (req, res) => {
                 {
                     model: User,
                     attributes: ['name', 'id']
-                },
-                {
-                    model: Review,
-                    attributes: ['comment'],
-                    include: [
-                        {
-                            model: User, 
-                            attributes: ['name', 'id']
-                        }
-                    ]
-                },
+                }
             ]
         })
 
@@ -139,7 +129,7 @@ console.log(savedListingData)
         //console.log(listings)
         //res.status(200).json(listingData);
         res.render('dashboard', {
-            listings, savedListing
+            listings, savedListing, logged_in: req.session.logged_in
         });
     } catch (err) {
         console.log(err);

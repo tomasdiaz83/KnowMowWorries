@@ -68,25 +68,25 @@ router.get('/listing/:id', async (req, res) => {
     }
 });
 
-// router.get('/', async (req, res) => {
-//     res.render('search');
-// });   
+router.get('/', async (req, res) => {
+    res.render('search');
+ });   
 
 router.get('/login', async (req, res) => {
     res.render('login');
 });
 
-// router.get('/contact', async (req, res) => {
-//     res.render('contact');
-// });
+ router.get('/contact', async (req, res) => {
+    res.render('contact');
+ });
 
-// router.get('/', async (req, res) => {
-//     res.render('dashboard');
-// });
+ router.get('/', async (req, res) => {
+     res.render('dashboard');
+ });
 
-// router.get('/', async (req, res) => {
-//     res.render('postlogin');
-// });
+ router.get('/', async (req, res) => {
+     res.render('postlogin');
+ });
    
 
 module.exports = router;

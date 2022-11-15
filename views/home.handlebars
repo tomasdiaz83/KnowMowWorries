@@ -14,11 +14,13 @@
             </div>
             <div class="tile is-parent box has-background-primary-light">
                 {{#each listings as |listing| }}
+
                     <a href="/post/{{listing.id}}">{{listing.id}}</a>
                 Created by {{listing.user.name}} on {{format_date listing.dateCreated}}
                 <br>
                 <br>
                 {{listing.description}}
+
                 {{/each}}
             </div>
     

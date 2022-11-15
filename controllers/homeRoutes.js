@@ -34,6 +34,44 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/listing/:id', async (req, res) => {
+    try {
+        const listingData = await Listing.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['name']
+                },
+                {
+                    model: Review,
+                    // attributes: ['comment', 'user_id'],
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['name']
+                        }
+                    ]
+                }
+            ]
+        })
+
+        const listing = listingData.get({ plain: true });
+
+        console.log(listing);
+
+        res.status(200).json(listing);
+        // res.render('listingInfo', {
+        //     listing
+        // });
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
+
+// router.get('/', async (req, res) => {
+//     res.render('search');
+// });   
+
 router.get('/login', async (req, res) => {
     res.render('login');
 });
@@ -49,10 +87,6 @@ router.get('/login', async (req, res) => {
 // router.get('/', async (req, res) => {
 //     res.render('postlogin');
 // });
-
-// router.get('/', async (req, res) => {
-//     res.render('search');
-// });   
    
 
 module.exports = router;

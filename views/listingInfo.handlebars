@@ -1,0 +1,25 @@
+<div>
+    <h2>Type of Work: {{listing.category}}</h2>
+    <p>Description: {{listing.description}}</p>
+    <p>Pricing: ${{listing.pricing}}</p>
+    <p>Location: {{listing.location}}</p>
+    <p>Freelancer: {{listing.user.name}}</p>
+    {{!-- {{#if logged_in}} --}}
+    <p>Created: {{format_date listing.dateCreated}}</p>
+    {{!-- {{/if}} --}}
+</div>
+
+<div>
+    <button>Save Listing</button>
+</div>
+
+<h1>Comments</h1>
+
+{{!-- {{#if logged_in}} --}}
+{{#each listing.reviews as |review|}}
+<div>
+    <p>{{review.comment}}</p>
+    <p>{{review.user.name}}</p>
+</div>
+{{/each}}
+{{!-- {{/if}} --}}

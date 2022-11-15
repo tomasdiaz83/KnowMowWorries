@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { User, Listing, SavedListing, Review } = require('../../models');
+const { User, Listing, Review } = require('../../models');
 
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const reviewData = await Review.findAll({
             include: [

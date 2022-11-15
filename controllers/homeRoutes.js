@@ -31,7 +31,7 @@ router.get('/listing/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name']
+                    attributes: ['name', 'email', 'phone']
                 },
                 {
                     model: Review,
@@ -47,8 +47,6 @@ router.get('/listing/:id', async (req, res) => {
         })
 
         const listing = listingData.get({ plain: true });
-
-        console.log(listing);
 
         // res.status(200).json(listing);
         res.render('listingInfo', {

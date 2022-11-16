@@ -1,18 +1,22 @@
-<section>
+<div class="parent searchmargin">
+<div class="box has-background-primary">
 
-    <div class="box has-background-primary-light pb-6">
         <div class="box has-background-primary-light">
-        <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">My Posts</p>
+            <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">My Posts</p>
         </div>
-        <div class="tile is-parent box has-background-primary-light">
+
+            <div class="box has-background-primary">
             {{#each listings as |listing| }}
-                <a href="/listing/{{listing.id}}">{{listing.title}}</a>
-                Category: {{listing.category}}
-                Description: {{listing.description}}
-                <br>
-                <br>
+                <div class="pt-2 box has-background-primary-light">
+                <a class="is-underlined" href="/listing/{{listing.id}}">{{listing.title}}</a>
+                    <p>Category:{{listing.category}}</p>
+                    <p>Description: {{listing.description}}</p>
+                </div>
+        
             {{/each}}
-        </div>
+            </div>
+        
+
     </div>
 
     <div class="box has-background-primary-light mt-6 pb-6">
@@ -27,5 +31,4 @@
             {{/each}}
         </div>
     </div>
-
-</section>
+</div>

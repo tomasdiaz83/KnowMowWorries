@@ -80,4 +80,17 @@ router.get('/delete/:id', async (req, res) => {
     }
 });
 
+router.post('/savedlisting', async (req, res) => {
+    try {
+        newList = await SavedListing.create({
+            ...req.body,
+            user_id: req.session.user_id
+        })
+
+        res.status(200).json(newList);
+    } catch {
+
+    }
+})
+
 module.exports = router

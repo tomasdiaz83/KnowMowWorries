@@ -30,7 +30,6 @@ const loginFormHandler = async (event) => {
     const password = document.querySelector('#password-register').value.trim();
   
     if (name && email && password) {
-      console.log("Working")
       const response = await fetch('/api/users/', {
         method: 'POST',
         body: JSON.stringify({ name, email, password }),

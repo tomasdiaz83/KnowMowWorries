@@ -23,6 +23,11 @@ As A  homeowner I WANT to be able to hire lawn care professionals in my local ar
 
 ## Assets
 
+![The Home page of Know Mow Worries has a login button on the the top right of the screen, has created listing for people ready to be hired, and a search button on the top of the screen.](./assets/Screenshot%202022-11-16%20085048.jpg)
+
+![The dashboard page of Know Mow Worries can only be accessed while logged in. Once logged in there is a dashboard with Your listings and saved listings. On the top right of the screen you can logout, go to your dashboard and create a listing. On the top left of the screen there is a home page that routes back to the home page and a search button that allows you to search local listings in the area](./assets/Screenshot%202022-11-16%20093756.jpg)
+
+
 ## Features
     Easily find and hire local yardcare workers in your local area
     Helps generate revenue for small businesses and freelancers

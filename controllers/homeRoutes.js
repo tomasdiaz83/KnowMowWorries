@@ -58,17 +58,72 @@ router.get('/listing/:id', async (req, res) => {
     }
 });
 
-// router.get('/', async (req, res) => {
-//     res.render('search');
-// });   
+router.get('/search', async (req, res) => {
+    res.render('search', {
+        logged_in: req.session.logged_in
+    });
+});
+
+router.post('/searchResults', async (req, res) => {
+    try {
+        let listingData;
+
+        if (req.body.category && req.body.location) {
+            listingData = await Listing.findAll({
+                where: {
+                    location: req.body.location,
+                    category: req.body.category
+                },
+                include: [
+                    {
+                        model: User,
+                        attributes: ['name']
+                    }
+                ]
+            })
+
+        } else if (req.body.category) {
+            listingData = await Listing.findAll({
+                where: {
+                    category: req.body.category
+                },
+                include: [
+                    {
+                        model: User,
+                        attributes: ['name']
+                    }
+                ]
+            })
+
+        } else if (req.body.location) {
+            listingData = await Listing.findAll({
+                where: {
+                    location: req.body.location
+                },
+                include: [
+                    {
+                        model: User,
+                        attributes: ['name']
+                    }
+                ]
+            })
+        }
+
+        const listings = listingData.map((listing) => listing.get({ plain: true }));
+        
+        //res.status(200).json(listingData)
+        res.render('searchResults', {
+            listings,
+        });
+
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
 
 router.get('/login', async (req, res) => {
     res.render('login');
 });
-
- router.get('/contact', async (req, res) => {
-    res.render('contact');
- });
 
 router.get('/dashboard', async (req, res) => {
     try {

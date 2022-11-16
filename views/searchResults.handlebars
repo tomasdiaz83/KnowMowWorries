@@ -1,0 +1,20 @@
+<div class="box has-background-primary-light">
+    <div class="box has-background-primary-light">
+        <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">Found Listings</p>
+            </div>
+                <div class="tile is-parent box has-background-primary-light">
+                    {{#if listings}}
+                    {{#each listings as |listing| }}
+
+                        <a href="/listing/{{listing.id}}">{{listing.title}}</a>
+                        Created by {{listing.user.name}} on {{format_date listing.dateCreated}}
+                        <br>
+                        <br>
+                        {{listing.description}}
+
+                    {{/each}}
+                    {{else}}
+                    <p>No data found</p>
+                    {{/if}}
+            </div>
+        </div>

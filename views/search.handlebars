@@ -15,6 +15,9 @@
           </div>
         </div>
       </div>
+      <div class="control">
+            <button style="float:right" class="button is-link is-success" id="submit-search-category">Submit</button>
+      </div>
     </div>
 
     <div class="links box has-background-primary-light child mb-4">
@@ -26,29 +29,10 @@
       </div>
 
       <div class="control">
-            <button style="float:right" class="button is-link is-success" id="submit-search">Submit</button>
+            <button style="float:right" class="button is-link is-success" id="submit-search-location">Submit</button>
       </div>
     </div>
     </div>
   </div>
-{{!-- {{#if listingData}}
-<section>
-    <div class="box has-background-primary-light">
-            <div class="box has-background-primary-light">
-            <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">Listings Found</p>
-            </div>
-            <div class="tile is-parent box has-background-primary-light">
-              <h1>TEST</h1>
-                {{#each listingData as |listing| }}
-                    <a href="/listing/{{listing.id}}">{{listing.title}}</a>
-                    Created by {{listing.user.name}} on {{format_date listing.dateCreated}}
-                    <br>
-                    <br>
-                    {{listing.description}}
-                {{/each}}
-            </div>
-        </div>
-</section>
-{{/if}} --}}
 
 <script src="/js/search.js"></script>

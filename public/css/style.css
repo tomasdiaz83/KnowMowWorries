@@ -1,6 +1,5 @@
 * {
   background-color: rgb(192, 246, 192);
-  padding: 70px;
 }
 
 
@@ -13,8 +12,7 @@ header {
 
 ul {
   list-style-type: none;
-  margin: 20px;
-  padding: 0;
+  padding: 10px;
   overflow: hidden;
 }
 
@@ -80,4 +78,19 @@ section {
 
   #search-list{
     display: none;
+  }
+
+  .margincenter {
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-bottom: 100px;
+  }
+
+  .paddingsubmit {
+    padding-bottom: 50px;
+  }
+
+  .searchmargin {
+    margin-left: 200px;
+    margin-right: 200px;
   }

@@ -1,8 +1,10 @@
 {{!-- Signup --}}
 
-<section>
 <div class="parent">
-  <div class="box has-background-primary-light child">
+  <div class="box has-background-primary-light child mr-5">
+          <div class="box has-background-primary-light">
+            <h2 class="title is-3 pb-2">Register</h2>
+          </div>
       <div class="field">
         <label class="label">Name</label>
           <div class="control">
@@ -16,7 +18,7 @@
 
         <label class="label">Password</label>
           <div class="control">
-            <input class="input" id="password-register" type="password" placeholder="e.g. alexsmith@gmail.com">
+            <input class="input" id="password-register" type="password" placeholder="e.g. 1234">
           </div>
       </div>
       <div class="control">
@@ -27,7 +29,7 @@
 
 {{!-- Login --}}
 
-    <div class="box has-background-primary-light child">
+    <div class="box has-background-primary-light child ml-5">
       <div class="field">
         <label class="label">Email</label>
         <div class="control">
@@ -38,14 +40,13 @@
       <div class="field">
         <label class="label">Password</label>
         <div class="control">
-          <input class="input" id="password-login" type="password" placeholder="e.g. alexsmith@gmail.com">
+          <input class="input" id="password-login" type="password" placeholder="e.g. 1234">
         </div>
       </div>
       <div class="control">
-        <button style="float:right" class="button is-link is-success" id="login-button" >Submit</button>
+        <button style="float:right" class="button is-link is-success" id="login-button" >Log In</button>
       </div>
     </div>
 </div>
-</section>
 
 <script src="/js/login.js"></script>

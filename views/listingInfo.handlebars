@@ -1,49 +1,82 @@
-<div>
-    <h2>Type of Work: {{listing.category}}</h2>
-    <p>Description: {{listing.description}}</p>
-    <p>Pricing: ${{listing.pricing}}</p>
-    <p>Location: {{listing.location}}</p>
-    <p>Freelancer: {{listing.user.name}}</p>
-    <p>Created: {{format_date listing.dateCreated}}</p>
-    {{#if logged_in}}
-    <p>Freelancer: {{listing.user.email}}</p>
-    <p>Freelancer: {{listing.user.phone}}</p>
-    {{else}}
-    <p>Login to see contact information</p>
-    {{/if}}
-</div>
-
-{{#if logged_in}}
+<div class="box has-background-primary margincenter">
+    <div class="box has-background-primary-light">
+        <div class="box has-background-primary-light">
+            <p class="tile is-ancestor has-background-primary-light title has-text-success-dark ">Job Listing</p>
+        </div>
+<div class="box has-background-primary-light pb-6">
+ <div class="pl-4 pb-4 pt-4">
+    <div>
+        <h2 class="title is-5">Category:</h2>{{listing.category}}
+     </div>
 
     <div>
-        <button>Save Listing</button>
+        <p class="title is-5">Description:</p> {{listing.description}}
+    </div>
+
+    <div>
+        <p class="title is-5">Pricing:</p> ${{listing.pricing}}
+    </div>
+
+    <div>
+        <p class="title is-5">Location:</p> {{listing.location}}
+    </div>
+
+    <div>
+        <p class="title is-5">Freelancer:</p> {{listing.user.name}}
+    </div>
+
+    <div>
+        <p class="title is-5">Created:</p> {{format_date listing.dateCreated}}
+    </div>
+
+    <div>
+    {{#if logged_in}}
+        <p class="title is-5">Contact:</p>
+        <p>Email:</p> {{listing.user.email}}
+        <p>Phone number:</p> {{listing.user.phone}}
+    {{else}}
+        <p>Login to see contact information</p>
+    {{/if}}
+    </div>
+ </div>
+
+{{#if logged_in}}
+    <div>
+        <input style="float:right" class="button is-success is-small is-focused mt-3" type="submit" value="Save Listing">
     </div>
 {{/if}}
+</div>
+</div>
 
-<h1>Comments</h1>
+<div class="box has-background-primary-light">
+<p class="subtitle is-5 pl-4 pb-1 pt-1">Reviews</p>
 
+<div class="pl-4 pb-1">
 {{#if logged_in}}
     {{#each listing.reviews as |review|}}
         <div>
-            <p>{{review.comment}}</p>
-            <p>{{review.user.name}}</p>
+            <p>"{{review.comment}}"</p>
+            <p class="pb-4">- {{review.user.name}}</p>
         </div>
     {{/each}}
+</div>
+</div>
 
-    <div class="box has-background-primary-light mt-6 pb-6">
+<div class="box has-background-primary-light mt-6 paddingsubmit">
         <div class="box has-background-primary-light">
             <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">Leave a Review</p>
         </div>
-        <div class="tile is-parent box has-background-primary-light">
-            <div class="tile is-child box has-background-primary-light field control">          
-            <textarea class="textarea" placeholder="Textarea"></textarea>
+
+        <div class="tile is-child box has-background-primary-light field control">          
+            <textarea class="textarea" placeholder="Comment"></textarea>
             </div>
-        </div>
         
-        <input style="float:right" class="button is-success is-focused" type="submit" value="Submit">
+        
+        <input style="float:right" class="button is-success is-small is-focused mt-3" type="submit" value="Submit">
     </div>
 {{else}}
     <div>
         <p>Login to view!</p>
     </div>
 {{/if}}
+</div>

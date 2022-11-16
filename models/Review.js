@@ -26,7 +26,6 @@ Review.init(
         listing_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            unique: true,
             references: {
                 model: 'listing',
                 key: 'id'

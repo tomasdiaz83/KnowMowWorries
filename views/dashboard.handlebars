@@ -22,13 +22,13 @@
             </div>
 
         <div class="box has-background-primary">
-        {{#each savedListings as |savedListing| }} 
-            <div class="pt-4 box has-background-primary-light pb-4"> 
-              <p class="has-text-weight-bold">Category: </p><p>{{savedListing.category}}</p>
-              <p class="has-text-weight-bold">User: </p><p>{{savedListing.user.name}}</p>
-              <p class="has-text-weight-bold">Pricing: </p><p>{{savedListing.pricing}}</p>
+        {{#each savedListing as |listing| }} 
+            <div class="links pt-4 box has-background-primary-light pb-4">
+                    <a class="links is-underlined px-2 has-text-weight-bold" href="/listing/{{listing.listing.user_id}}">{{listing.listing.title}}</a>
+                    <p class="has-text-weight-bold">Category:</p><p> {{listing.listing.category}}</p>
+                    <p class="has-text-weight-bold">Description:</p><p class="pb-2"> {{listing.listing.description}}</p>
             </div>
-            {{/each}}
+        {{/each}}
         </div>
     </div>
 </div>

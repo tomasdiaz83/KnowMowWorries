@@ -34,7 +34,7 @@ const newListingHandler = async (event) => {
         window.location.toString().split('/').length - 1
     ];
 
-    const response = await fetch(`/api/listing/savedlisting`, {
+    const response = await fetch(`/api/listings/savedlisting`, {
         method: 'POST',
         body: JSON.stringify({ listing_id }),
         headers: {

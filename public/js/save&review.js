@@ -27,6 +27,20 @@ const newListingHandler = async (event) => {
     }
   };
 
+  saveToListHandler = async (e) => {
+    e.preventDefault();
+
+    const listing_id = window.location.toString().split('/')[
+        window.location.toString().split('/').length - 1
+    ];
+
+    
+  }
+
 document
     .querySelector('#submit-review')
     .addEventListener('click', newListingHandler);
+
+document
+    .querySelector('#submit-tosave')
+    .addEventListener('click', saveToListHandler);

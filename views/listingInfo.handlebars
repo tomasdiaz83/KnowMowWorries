@@ -6,6 +6,9 @@
 <div class="box has-background-primary-light pb-6">
  <div class="pl-4 pb-4 pt-4">
     <div>
+        <h2 class="title is-5" >Title:</h2>{{listing.title}}
+     </div>
+    <div>
         <h2 class="title is-5">Category:</h2>{{listing.category}}
      </div>
 
@@ -68,11 +71,11 @@
         </div>
 
         <div class="tile is-child box has-background-primary-light field control">          
-            <textarea class="textarea" placeholder="Comment"></textarea>
+            <textarea class="textarea" placeholder="Comment" id="comment-field"></textarea>
             </div>
         
         
-        <input style="float:right" class="button is-success is-small is-focused mt-3" type="submit" value="Submit">
+        <input style="float:right" class="button is-success is-small is-focused mt-3" type="submit" id="submit-review" value="Submit">
     </div>
 {{else}}
     <div>
@@ -80,3 +83,5 @@
     </div>
 {{/if}}
 </div>
+
+<script src="/js/review.js"></script>

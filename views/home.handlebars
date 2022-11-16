@@ -4,15 +4,15 @@
             <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">About Us</p>
             </div>
             <div class="tile is-parent box has-background-primary-light">
-                <p class="tile is-child box has-background-primary-light">Know Mow Worries is the right search engine for the job. Whether you are an entrepreneur looking for a gig or a homeowner wanting projects done right, we have the tools to help.</p>
+                <p class="tile is-child box has-background-primary-light content has-text-centered">Know Mow Worries is the search engine for the job! Whether you are an entrepreneur looking for a client or a homeowner wanting projects done the right way. We have the tools to help.</p>
             </div>
         </div>
     
         <div class="box has-background-primary-light">
             <div class="box has-background-primary-light">
-            <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">Top Listings</p>
+            <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">New Listings</p>
             </div>
-            <div class="tile is-parent box has-background-primary-light">
+            <div class="tile is-parent box has-background-primary-light content has-text-centered">
                 {{#each listings as |listing| }}
 
                 <a href="/listing/{{listing.id}}">{{listing.title}}</a>

@@ -3,17 +3,14 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="/css/style.css" />
         <title>KnowMow Inc.</title>
     </head>
     <body>
 
-        <header>
-            <div class="nav">
+        <header class="nav">
                 <ul>
                     <li><a href="/">Home</a></li>
                     {{!-- <li><a href="#search">Search</a></li> --}}
@@ -25,15 +22,15 @@
                         <li style="float:right"><a href="/login">Login</a></li>
                     {{/if}}
                 </ul>
-            </div>
         </header>
 
         <main>
+            <h1 class="title is-1 content has-text-centered has-text-success-dark"> Know Mow Worries</h1>
             {{{body}}}
         </main>
 
         <footer>
-            <p>© 2022 Know Mow Inc.</p>
+            <p class="content has-text-centered">© 2022 Know Mow Inc.</p>
         </footer>
         {{#if logged_in}}
             <script src="/js/logout.js"></script>

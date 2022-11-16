@@ -1,34 +1,33 @@
 {{!-- Signup --}}
 
 <section>
+<div class="parent">
+  <div class="box has-background-primary-light child">
       <div class="field">
         <label class="label">Name</label>
-        <div class="control">
-          <input class="input" id="name-register" type="text" placeholder="e.g Alex Smith">
-        </div>
-      </div>
+          <div class="control">
+            <input class="input" id="name-register" type="text" placeholder="e.g Alex Smith">
+          </div>
       
-      <div class="field">
         <label class="label">Email</label>
-        <div class="control">
-          <input class="input" id="email-register" type="email" placeholder="e.g. alexsmith@gmail.com">
-        </div>
-      </div>
+          <div class="control">
+            <input class="input" id="email-register" type="email" placeholder="e.g. alexsmith@gmail.com">
+          </div>
 
-      <div class="field">
         <label class="label">Password</label>
-        <div class="control">
-          <input class="input" id="password-register" type="password" placeholder="e.g. alexsmith@gmail.com">
-        </div>
+          <div class="control">
+            <input class="input" id="password-register" type="password" placeholder="e.g. alexsmith@gmail.com">
+          </div>
       </div>
       <div class="control">
         <button style="float:right" class="button is-link is-success" id="register-button">Submit</button>
       </div>
-</section>
+  </div>
+
 
 {{!-- Login --}}
 
-<section>
+    <div class="box has-background-primary-light child">
       <div class="field">
         <label class="label">Email</label>
         <div class="control">
@@ -45,6 +44,8 @@
       <div class="control">
         <button style="float:right" class="button is-link is-success" id="login-button" >Submit</button>
       </div>
+    </div>
+</div>
 </section>
 
 <script src="/js/login.js"></script>

@@ -1,9 +1,9 @@
 <div class="box has-background-primary margincenter">
-    <div class="box has-background-primary-light">
-        <div class="box has-background-primary-light">
+    <div class="links box has-background-primary-light">
+        <div class="links box has-background-primary-light">
             <p class="tile is-ancestor has-background-primary-light title has-text-success-dark ">Job Listing</p>
         </div>
-<div class="box has-background-primary-light pb-6">
+<div class="links box has-background-primary-light pb-6">
  <div class="pl-4 pb-4 pt-4">
     <div>
         <h2 class="title is-5">Category:</h2>{{listing.category}}
@@ -35,7 +35,7 @@
         <p>Email:</p> {{listing.user.email}}
         <p>Phone number:</p> {{listing.user.phone}}
     {{else}}
-        <p>Login to see contact information</p>
+        <p class="has-text-weight-bold pt-4">Login to see contact information!</p>
     {{/if}}
     </div>
  </div>
@@ -48,7 +48,7 @@
 </div>
 </div>
 
-<div class="box has-background-primary-light">
+<div class="links box has-background-primary-light">
 <p class="subtitle is-5 pl-4 pb-1 pt-1">Reviews</p>
 
 <div class="pl-4 pb-1">
@@ -62,12 +62,12 @@
 </div>
 </div>
 
-<div class="box has-background-primary-light mt-6 paddingsubmit">
-        <div class="box has-background-primary-light">
+<div class="links box has-background-primary-light mt-6 paddingsubmit">
+        <div class="links box has-background-primary-light">
             <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">Leave a Review</p>
         </div>
 
-        <div class="tile is-child box has-background-primary-light field control">          
+        <div class="links tile is-child box has-background-primary-light field control">          
             <textarea class="textarea" placeholder="Comment"></textarea>
             </div>
         
@@ -76,7 +76,7 @@
     </div>
 {{else}}
     <div>
-        <p>Login to view!</p>
+        <p class="has-text-weight-bold">Login to view!</p>
     </div>
 {{/if}}
 </div>

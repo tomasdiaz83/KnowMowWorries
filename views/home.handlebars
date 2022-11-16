@@ -1,27 +1,28 @@
-    <section>
-        <div class="box has-background-primary-light pb-6">
-            <div class="box has-background-primary-light">
-            <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">About Us</p>
+   <div class="parent">
+   <div class="box has-background-primary center">
+       <div class="box has-background-primary">
+            <div class="links box has-background-primary-light">
+            <p class="has-background-primary-light title has-text-success-dark">About Us</p>
             </div>
-            <div class="tile is-parent box has-background-primary-light">
+            <div class="links tile is-parent box has-background-primary-light">
                 <p class="tile is-child box has-background-primary-light content has-text-centered">Know Mow Worries is the search engine for the job! Whether you are an entrepreneur looking for a client or a homeowner wanting projects done the right way. We have the tools to help.</p>
             </div>
+       </div>
         </div>
     
-        <div class="box has-background-primary-light">
-            <div class="box has-background-primary-light">
-            <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">New Listings</p>
+        <div class="box has-background-primary center">
+
+            <div class="links box has-background-primary-light">
+                <p class="has-background-primary-light title has-text-success-dark m-auto">New Listings</p>
             </div>
-            <div class="tile is-parent box has-background-primary-light content has-text-centered">
+
+            <div class="links box has-background-primary-light">
                 {{#each listings as |listing| }}
-
-                <a href="/listing/{{listing.id}}">{{listing.title}}</a>
-                Created by {{listing.user.name}} on {{format_date listing.dateCreated}}
-                <br>
-                <br>
-                {{listing.description}}
-
+            <div class="tile pt-4 box has-background-primary-light pb-4">
+                <a class="links mr-2 has-text-weight-bold px-1" href="/listing/{{listing.id}}">{{listing.title}}</a>
+                <p class="has-background-primary-light">- Created by {{listing.user.name}} on {{format_date listing.dateCreated}}</p>
+            </div>
                 {{/each}}
             </div>
         </div>
-    </section>
+   </div>

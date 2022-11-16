@@ -31,3 +31,7 @@
     border-bottom-style: solid;
     border-color: rgb(152, 188, 170);
   }
+
+  #search-list{
+    display: none;
+  }

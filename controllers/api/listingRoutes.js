@@ -1,6 +1,7 @@
 const router = require('express').Router();
+const sequelize = require('../../config/connection');
 const { User, Listing, SavedListing, Review } = require('../../models');
-const { restore } = require('../../models/User');
+const Op = sequelize.Op
 
 router.get('/', async (req, res) => {
     try {
@@ -35,8 +36,8 @@ router.get('/:id', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['name']
-                }
+                    attributes: ['name', 'id']
+                },
             ]
         })
 

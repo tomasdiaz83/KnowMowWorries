@@ -3,7 +3,7 @@
         <label class="label">Service:</label>
         <div class="control">
           <div class="select">
-            <select id = "category-listing">
+            <select id = "category-search">
               <option>Landscaping</option>
               <option>Lawn Mowing</option>
               <option>Gutter cleaning</option>
@@ -14,14 +14,35 @@
       </div>
 
       <div class="field box mt-6">
-        <label class="label">Location:</label>
+        <label class="label">Location (By Zipcode):</label>
         <div>
-          <input class="input is-success" type="text" placeholder="Text input" value="Zipcode">
+          <input class="input is-success" id = "location-search" type="text" placeholder="55555">
         </div>
       </div>
 
       <div class="control">
-            <button style="float:right" class="button is-link is-success">Submit</button>
+            <button style="float:right" class="button is-link is-success" id="submit-search">Submit</button>
       </div>
-
 </section>
+
+{{!-- {{#if listingData}}
+<section>
+    <div class="box has-background-primary-light">
+            <div class="box has-background-primary-light">
+            <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">Listings Found</p>
+            </div>
+            <div class="tile is-parent box has-background-primary-light">
+              <h1>TEST</h1>
+                {{#each listingData as |listing| }}
+                    <a href="/listing/{{listing.id}}">{{listing.title}}</a>
+                    Created by {{listing.user.name}} on {{format_date listing.dateCreated}}
+                    <br>
+                    <br>
+                    {{listing.description}}
+                {{/each}}
+            </div>
+        </div>
+</section>
+{{/if}} --}}
+
+<script src="/js/search.js"></script>

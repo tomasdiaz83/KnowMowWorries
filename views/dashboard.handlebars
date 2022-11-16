@@ -1,33 +1,33 @@
-<div class="parent searchmargin">
-<div class="box has-background-primary">
-
-        <div class="box has-background-primary-light">
-            <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">My Posts</p>
-        </div>
+<div class="parent dashboardmargin">
+    <div class="box has-background-primary">
+            <div class="links box has-background-primary-light">
+                <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">My Posts</p>
+            </div>
 
             <div class="box has-background-primary">
             {{#each listings as |listing| }}
-                <div class="pt-2 box has-background-primary-light">
-                <a class="is-underlined" href="/listing/{{listing.id}}">{{listing.title}}</a>
-                    <p>Category:{{listing.category}}</p>
-                    <p>Description: {{listing.description}}</p>
+                <div class="links pt-4 box has-background-primary-light pb-4">
+                    <a class="links is-underlined px-2 has-text-weight-bold" href="/listing/{{listing.id}}">{{listing.title}}</a>
+                    <p class="has-text-weight-bold">Category:</p><p> {{listing.category}}</p>
+                    <p class="has-text-weight-bold">Description:</p><p class="pb-2"> {{listing.description}}</p>
                 </div>
         
             {{/each}}
             </div>
-        
-
     </div>
 
-    <div class="box has-background-primary-light mt-6 pb-6">
-        <div class="box has-background-primary-light">
-        <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">Saved Posts</p>
-        </div>
-        <div class="tile is-parent box has-background-primary-light">
-             {{#each savedListings as |savedListing| }}  
-              <p>Category: {{savedListing.category}}</p>
-              <p>User: {{savedListing.user.name}}</p>
-              <p>Pricing: {{savedListing.pricing}}</p>
+    <div class="box has-background-primary">
+            <div class="links box has-background-primary-light">
+                <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">Saved Posts</p>
+            </div>
+
+        <div class="box has-background-primary">
+        {{#each savedListings as |savedListing| }} 
+            <div class="pt-4 box has-background-primary-light pb-4"> 
+              <p class="has-text-weight-bold">Category: </p><p>{{savedListing.category}}</p>
+              <p class="has-text-weight-bold">User: </p><p>{{savedListing.user.name}}</p>
+              <p class="has-text-weight-bold">Pricing: </p><p>{{savedListing.pricing}}</p>
+            </div>
             {{/each}}
         </div>
     </div>

@@ -1,29 +1,31 @@
-const searchHandler = async (event) => {
+const searchCatHandler = async (event) => {
     event.preventDefault();
   
     const category = document.querySelector('#category-search').value.trim();
+  
+    if (category) {
+        document.location.replace(`/searchResults/cat/${category}`)
+    } else {
+            alert('Please fill a field');
+    }
+  };
+
+  const searchLocHandler = async (event) => {
+    event.preventDefault();
+  
     const location = document.querySelector('#location-search').value.trim();
   
-    if (category || location) {
-        const response = await fetch(`/searchResults`, {
-            method: 'POST',
-            body: JSON.stringify({ category, location }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
-  
-        if (response.ok) {
-
-        } else {
-            alert('Failed to create listing - please ensure fields are correctly filled out')
-        }
-
+    if (location) {
+        document.location.replace(`/searchResults/loc/${location}`)
     } else {
             alert('Please fill a field');
     }
   };
 
 document
-    .querySelector('#submit-search')
-    .addEventListener('click', searchHandler);
+    .querySelector('#submit-search-location')
+    .addEventListener('click', searchLocHandler);
+
+document
+    .querySelector('#submit-search-category')
+    .addEventListener('click', searchCatHandler);

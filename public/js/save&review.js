@@ -27,7 +27,7 @@ const newListingHandler = async (event) => {
     }
   };
 
-  saveToListHandler = async (e) => {
+  const saveToListHandler = async (e) => {
     e.preventDefault();
 
     const listing_id = window.location.toString().split('/')[

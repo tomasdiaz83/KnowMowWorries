@@ -1,17 +1,17 @@
-<div class="box has-background-primary-light">
+<div class="box has-background-primary searchmargin">
     <div class="box has-background-primary-light">
         <p class="tile is-ancestor has-background-primary-light title has-text-success-dark">Found Listings</p>
             </div>
-                <div class="tile is-parent box has-background-primary-light">
+                <div class="tile is-parent box has-background-primary">
                     {{#if listings}}
+                <div class="links box has-background-primary-light">
                     {{#each listings as |listing| }}
-
-                        <a href="/listing/{{listing.id}}">{{listing.title}}</a>
-                        Created by {{listing.user.name}} on {{format_date listing.dateCreated}}
-                        <br>
-                        <br>
-                        {{listing.description}}
-
+                    <div class="tile pt-4 box">
+                        <a class="links mr-2 has text-weight-bold px-1" href="/listing/{{listing.id}}">{{listing.title}}</a>
+                        <p class="has-background-primary-light">
+                        Created by {{listing.user.name}} on {{format_date listing.dateCreated}}</p><p>
+                        {{listing.description}}</p>
+                    </div>
                     {{/each}}
                     {{else}}
                     <p>No data found</p>

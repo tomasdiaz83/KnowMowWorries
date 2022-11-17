@@ -97,8 +97,8 @@ section {
   }
 
   .searchmargin {
-    margin-left: 500px;
-    margin-right: 500px;
+    margin-left: 400px;
+    margin-right: 400px;
   }
 
 
@@ -122,3 +122,6 @@ section {
     border-width: 1px;
   }
   
+.inlineblock {
+  display: inline-block;
+}

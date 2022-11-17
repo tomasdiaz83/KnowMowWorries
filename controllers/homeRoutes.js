@@ -65,15 +65,14 @@ router.get("/search", async (req, res) => {
     });
 });
 
-router.post('/searchResults', async (req, res) => {
+router.get('/searchResults/cat/:cat', async (req, res) => {
     try {
         let listingData;
 
         if (req.params.cat) {
             listingData = await Listing.findAll({
                 where: {
-                    location: req.body.location,
-                    category: req.body.category
+                    category: req.params.cat
                 },
                 include: [
                     {
@@ -82,42 +81,43 @@ router.post('/searchResults', async (req, res) => {
                     }
                 ]
             })
-
-        } else if (req.body.category) {
-            listingData = await Listing.findAll({
-                where: {
-                    category: req.body.category
-                },
-                include: [
-                    {
-                        model: User,
-                        attributes: ['name']
-                    }
-                ]
-            })
-
-        } else if (req.body.location) {
-            listingData = await Listing.findAll({
-                where: {
-                    location: req.body.location
-                },
-                include: [
-                    {
-                        model: User,
-                        attributes: ["name"],
-                    },
-                ],
-            });
         }
 
         const listings = listingData.map((listing) => listing.get({ plain: true }));
-        
-        //res.status(200).json(listingData)
         res.render('searchResults', {
-            listings,
+            listings
         });
+
     } catch (err) {
-        res.status(500).json(err);
+        res.status(500).json(err)
+    }
+});
+
+router.get('/searchResults/loc/:loc', async (req, res) => {
+    try {
+        let listingData;
+
+        if (req.params.loc) {
+            listingData = await Listing.findAll({
+                where: {
+                    location: req.params.loc
+                },
+                include: [
+                    {
+                        model: User,
+                        attributes: ['name']
+                    }
+                ]
+            })
+        }
+
+        const listings = listingData.map((listing) => listing.get({ plain: true }));
+        res.render('searchResults', {
+            listings
+        });
+
+    } catch (err) {
+        res.status(500).json(err)
     }
 });
 

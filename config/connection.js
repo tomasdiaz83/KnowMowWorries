@@ -1,13 +1,12 @@
 const Sequelize = require('sequelize');
 require('dotenv').config();
+//import * as pg from 'pg';
 
 let sequelize
 
 if (process.env.RENDER) {
   console.log("Got to Render")
-  sequelize = new Sequelize(process.env.RENDERDB, {
-    dialectModule: pg
-  });
+  sequelize = new Sequelize(process.env.RENDERDB, null, null, {});
 } else if (process.env.CYCLIC_URL) {
   console.log("Got to CYCLIC")
 } else {

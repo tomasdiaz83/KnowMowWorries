@@ -2,7 +2,7 @@
   "name": "knowmowworries",
   "version": "1.0.0",
   "description": "Lawn Care Employment Service",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "seeds": "node seeds/seed.js"

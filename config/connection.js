@@ -3,8 +3,8 @@ require('dotenv').config();
 
 let sequelize
 
-if (process.env.CYCLIC_DB) {
-  sequelize = new Sequelize(process.env.CYCLIC_DB);
+if (process.env.RENDER) {
+  sequelize = new Sequelize(process.env.RENDERDB);
 } else {
   sequelize = new Sequelize(
       process.env.DB_NAME, 

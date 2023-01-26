@@ -6,7 +6,7 @@ let sequelize
 
 if (process.env.RENDER) {
   console.log("Got to Render")
-  sequelize = new Sequelize('kmw_db', 'kmw_db_user', 'L1mNsFEhJQh0m3XQ1n3qHUc7XwQCbXeA',{
+  sequelize = new Sequelize(process.env.RENDERDB,{
     dialect: 'postgres'
   });
 } else if (process.env.CYCLIC_URL) {
